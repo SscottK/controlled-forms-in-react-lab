@@ -1,4 +1,5 @@
-import { useDebugValue, useState } from "react";
+import { useState } from "react";
+
 
 const Bookshelf = () => {
     const [books, setBooks] = useState([]);
@@ -37,9 +38,9 @@ const Bookshelf = () => {
                 </form>
             </div>
             <div className="bookCardDiv">
-                {books.map((book) => {
+                {books.map((book, index) => {
                     return (
-                        <div className="bookCard">
+                        <div className="bookCard" key={index}>
                             <h3>{book.title}</h3>
                             <p>{book.author}</p> 
                         </div>                      
